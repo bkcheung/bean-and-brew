@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 :root {
-  color: white;
+  color: black;
 }
 @keyframes slide-in {
   from {

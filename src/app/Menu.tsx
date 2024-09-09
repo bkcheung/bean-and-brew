@@ -11,7 +11,7 @@ const Menu = () => {
     }
     return(
         <div>
-            <div className={cx("bg-white/90 text-black fixed top-0 left-0 \
+            <div className={cx("bg-white/90  fixed top-0 left-0 \
                                 min-h-[100vh] min-w-[75vw] flex flex-col justify-center text-3xl"
                                , showMenu?'show':'hidden')}>
                 <Link className="p-10" href="/" onClick={toggleMenu}>Home</Link>

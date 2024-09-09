@@ -6,7 +6,7 @@ export default async function Shop(){
     // console.log(beans);
     const coffee = beans.map((coffee:coffeeType)=>{
         return(
-            <div key={coffee.id} className="text-black">
+            <div key={coffee.id} className="">
                 <Image src={coffee.image_url} alt={coffee.name} width={50} height={50}/>
                 <h2>{coffee.name}</h2>
                 <h1>${coffee.price}</h1>
@@ -15,7 +15,7 @@ export default async function Shop(){
     })
 
     return(
-        <div className="text-black flex flex-col justify-center">
+        <div className=" flex flex-col justify-center">
            <h4 className="text-3xl py-8">Shop All</h4>
            <div className="grid grid-cols-2 gap-4">
              {coffee}
