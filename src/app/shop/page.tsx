@@ -3,12 +3,13 @@ import Image from "next/image";
 export default async function Shop(){
     const data = await fetch("https://fake-coffee-api.vercel.app/api");
     const beans = await data.json();
-    const coffee = beans.map((coffee:coffeeType)=>{
+    const filteredBeans = beans.filter((bean:coffeeType)=>bean.id!==5&&bean.id!==11&&bean.id!==16)
+    const coffee = filteredBeans.map((coffee:coffeeType)=>{
         return(
             <div key={coffee.id} className="flex flex-col items-center">
                 <div className="relative w-[50vw] h-[45vh] md:w-[30vw] md:h-[42vh]">
                 <Image fill src={coffee.image_url} alt={coffee.name}
-                       sizes="50vw" objectFit="cover"/>
+                       sizes="50vw" style={{'objectFit':"cover"}}/>
                 </div>
                 <h2>{coffee.name}</h2>
                 <h1>${coffee.price}</h1>
