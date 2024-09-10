@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const Header = () => {
     return(
-        <header>
+        <div className="sticky top-0 z-40">
             <div className="flex items-center justify-around pt-12 pb-6 min-h-28 bg-[url('/images/leaf.jpg')] bg-cover">
             <Menu/>
                 <Link href="/"className="text-3xl text-white">Bean & Brew</Link>
@@ -19,7 +19,7 @@ const Header = () => {
                 </Link>     
             </div>
             <h2 className="p-1 min-h-4 bg-[#EFF3EC] text-center">Freshly roasted small-batch coffee beans</h2>
-        </header>
+        </div>
     )
 }
 
