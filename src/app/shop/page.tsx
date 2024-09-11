@@ -18,7 +18,7 @@ export default async function Shop(){
                     <h2 className="group-hover:text-dark-green group-hover:underline">{coffee.name}</h2>
                 </div>
                 <h1>${coffee.price}</h1>
-                <AddToCart/>
+                <AddToCart id={coffee.id}/>
             </div>
         )
     })

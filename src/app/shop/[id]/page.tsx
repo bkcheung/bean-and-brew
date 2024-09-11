@@ -27,7 +27,7 @@ export default async function coffeePage({params}:{params:{id:string}}){
                     </div>
                     <div className="p-4 flex flex-col items-end">
                         <div className="text-gray-500 py-2">${coffee.price}/{coffee.weight}g</div>
-                        <AddToCart />
+                        <AddToCart id={coffee.id}/>
                     </div>
                 </div>
             </div>
