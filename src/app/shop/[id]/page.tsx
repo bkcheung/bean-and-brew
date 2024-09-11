@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "@/app/components/AddToCart";
+import { getBeans, coffeeType } from "@/app/functions/getBeans";
 
-export default async function coffeePage({params}:{params:{id:string}}){
-    const res = await fetch(`https://fake-coffee-api.vercel.app/api/${params.id}`);
-    if (!res.ok) return undefined
-    const coffeeRes = await res.json();
-    const coffee = coffeeRes[0];
+export default async function coffeePage({params}:{params:{id:number}}){
+    const beans = await getBeans();
+    let coffee = beans.filter((bean:coffeeType)=>bean.id===Number(params.id))[0]
     const tastes = coffee.flavor_profile.join(', ');
     return(
         <div className="flex flex-col">

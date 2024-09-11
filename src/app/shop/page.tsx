@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "../components/AddToCart";
+import { coffeeType, getBeans } from "../functions/getBeans";
 
 export default async function Shop(){
-    const data = await fetch("https://fake-coffee-api.vercel.app/api");
-    const beans = await data.json();
-    const filteredBeans = beans.filter((bean:coffeeType)=>bean.id!==5&&bean.id!==11&&bean.id!==16)
+    const filteredBeans = await getBeans();
     const coffee = filteredBeans.map((coffee:coffeeType)=>{
         return(
             <div key={coffee.id} className="flex flex-col items-center">
@@ -30,17 +29,4 @@ export default async function Shop(){
            </div>
         </div>
     )
-}
-
-type coffeeType = {
-    id: number,
-    name: string,
-    description: string,
-    price: number,
-    region: string,
-    weight: number,
-    roast_level: number,
-    flavor_profile: string[],
-    grind_option: string[],
-    image_url: string
 }
