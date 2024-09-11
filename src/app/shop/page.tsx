@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "../components/AddToCart";
-import { coffeeType, getBeans } from "../functions/getBeans";
+import { coffeeType, getBeans } from "../utils/getBeans";
 
 export default async function Shop(){
     const filteredBeans = await getBeans();
