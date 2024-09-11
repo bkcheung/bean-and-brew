@@ -5,7 +5,7 @@ import { getBeans, coffeeType } from "@/app/functions/getBeans";
 
 export default async function coffeePage({params}:{params:{id:number}}){
     const beans = await getBeans();
-    let coffee = beans.filter((bean:coffeeType)=>bean.id===Number(params.id))[0]
+    const coffee = beans.filter((bean:coffeeType)=>bean.id===Number(params.id))[0]
     const tastes = coffee.flavor_profile.join(', ');
     return(
         <div className="flex flex-col">
