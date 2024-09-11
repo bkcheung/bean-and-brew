@@ -10,7 +10,10 @@ export default async function coffeePage({params}:{params:{id:string}}){
     const tastes = coffee.flavor_profile.join(', ');
     return(
         <div className="flex flex-col">
-            <Link href="/shop" className="p-4 text-gray-700"> ↩ Back</Link>
+            <Link href="/shop" 
+                  className="p-4 text-gray-700 hover:text-dark-green hover:underline">
+                  ↩ Back
+            </Link>
             <div className="flex flex-col items-center lg:flex-row">
                 <div className="relative w-[80vw] h-[50vh] lg:w-[40vw] lg:h-[80vh]">
                     <Image fill src={coffee.image_url} alt={coffee.name} 
