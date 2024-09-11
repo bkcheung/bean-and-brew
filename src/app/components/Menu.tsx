@@ -13,7 +13,8 @@ const Menu = () => {
         <div className="z-50">
             <div className={cx("bg-white/90  fixed top-0 left-0 \
                                 min-h-[100vh] min-w-[75vw] flex flex-col justify-center text-3xl"
-                               , showMenu?'show':'hidden')}>
+                               , showMenu?'show':'hidden')}
+                 aria-label="menu">
                 <Link className="p-10" href="/" onClick={toggleMenu}>Home</Link>
                 <Link className="p-10" href="/shop"onClick={toggleMenu}>Shop All</Link>
                 <Link className="p-10" href="/cart"onClick={toggleMenu}>Cart</Link>
