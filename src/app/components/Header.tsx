@@ -4,9 +4,9 @@ import Image from "next/image"
 
 const Header = () => {
     return(
-        <div className="sticky top-0 z-40">
+        <div className="sticky top-0 z-40" aria-label="header">
             <div className="flex items-center justify-around pt-12 pb-6 min-h-28 bg-[url('/images/leaf.jpg')] bg-cover">
-            <Menu/>
+                <Menu/>
                 <Link href="/"className="text-3xl text-white">Bean & Brew</Link>
                 <Link href="/cart">
                     <Image
