@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-serif antialiased">
-        <Header/>
+        <Header />
         {children}
       </body>
     </html>
