@@ -1,38 +1,37 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Shop from "./page";
+import fetchMock from "jest-fetch-mock";
 
-window.fetch = jest.fn(() => {
-  const data = [
-    {
-      id: 1,
-      name: "Signature Blend",
-      price: "12.99",
-      image_url: "https://iili.io/H8Y78Qt.webp",
-    },
-    {
-      id: 2,
-      name: "Golden Sunrise",
-      price: "13.99",
-      image_url: "https://iili.io/H8Y7WEg.webp",
-    },
-  ];
-  return Promise.resolve({
-    ok: true,
-    json: () => Promise.resolve(data),
-  });
-}) as jest.Mock;
+fetchMock.enableMocks();
 
 describe("Shop", () => {
-  it("renders shop page", async () => {
-    const shop = render(<Shop />);
-    expect(shop).toMatchSnapshot;
+  beforeEach(() => {
+    fetchMock.resetMocks();
   });
-  // it('title highlights on hover', async ()=>{
-  //     render(<Shop/>);
-  //     const product1 = screen.getByText('Signature Blend');
-  //     const product2 = screen.getByText('Golden Sunrise');
-  //     expect(product1).toBeInTheDocument;
-  //     expect(product2).toBeInTheDocument;
-  // })
+  it("renders shop page", async () => {
+    const data = [
+      {
+        id: 1,
+        name: "Signature Blend",
+        price: "12.99",
+        image_url: "https://iili.io/H8Y78Qt.webp",
+      },
+      {
+        id: 2,
+        name: "Golden Sunrise",
+        price: "13.99",
+        image_url: "https://iili.io/H8Y7WEg.webp",
+      },
+    ];
+
+    fetchMock.mockResponseOnce(JSON.stringify(data));
+
+    const shopJSX = await Shop(); //since Shop returns a Promise<JSX.Element> rather than JSX.Element
+    render(shopJSX);
+    const product1 = screen.getByText("Signature Blend");
+    const product2 = screen.getByText("Golden Sunrise");
+    expect(product1).toBeInTheDocument;
+    expect(product2).toBeInTheDocument;
+  });
 });
