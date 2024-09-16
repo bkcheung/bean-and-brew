@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
+import { CartProvider } from "./context";
 
 export const metadata: Metadata = {
   title: "Bean and Brew",
@@ -16,7 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-serif antialiased">
         <Header />
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
