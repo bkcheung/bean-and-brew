@@ -9,7 +9,6 @@ export default function Cart() {
       <div key={index}>{product}</div>
     )
   })
-  console.log(cartContent);
   return (
       <div className="text-black flex flex-col items-center">
         <h4 className="text-3xl py-8">Cart</h4>
