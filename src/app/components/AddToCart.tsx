@@ -6,7 +6,7 @@ interface addCartProps {
   id: number;
 }
 const AddToCart = ({ id }: addCartProps) => {
-  const {cartContent, setCartContent} = useContext(CartContext);
+  const { cartContent, setCartContent } = useContext(CartContext);
   function addToCart() {
     setCartContent([...cartContent, String(id)]);
   }

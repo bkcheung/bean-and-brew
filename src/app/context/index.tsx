@@ -11,10 +11,16 @@ type ContextType = {
 const CartContext = createContext<ContextType>({
   cartContent: [""],
   setCartContent: () => {},
-  beans: null
+  beans: null,
 });
 
-function CartProvider({ children, beans }: { children: React.ReactNode, beans:Promise<coffeeType[]> }) {
+function CartProvider({
+  children,
+  beans,
+}: {
+  children: React.ReactNode;
+  beans: Promise<coffeeType[]>;
+}) {
   const [cartContent, setCartContent] = useState<string[]>([]);
   return (
     <CartContext.Provider value={{ cartContent, setCartContent, beans }}>

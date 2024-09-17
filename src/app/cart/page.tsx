@@ -4,17 +4,19 @@ import { CartContext } from "../context";
 import { coffeeType } from "../utils/getBeans";
 
 export default function Cart() {
-  const { cartContent, beans } = useContext(CartContext);
-  let coffeeBeans:coffeeType[];
-  if(beans!==null) coffeeBeans = use(beans);
-  else return new Error('Error; coffee beans not found');
   let userCart;
+  let coffeeBeans: coffeeType[];
+  const { cartContent, beans } = useContext(CartContext);
+  if (beans !== null) coffeeBeans = use(beans);
   if (cartContent.length == 0) {
     userCart = <div>Cart is empty</div>;
-  } 
-  else {
+  } else if (beans === null) {
+    userCart = <div>Error: beans cannot be found, please try again later</div>;
+  } else {
     userCart = cartContent.map((id: string, index: number) => {
-      const product = coffeeBeans.filter((bean:coffeeType) => bean.id === Number(id))[0];
+      const product = coffeeBeans.filter(
+        (bean: coffeeType) => bean.id === Number(id),
+      )[0];
       return <div key={index}>{product?.name}</div>;
     });
   }

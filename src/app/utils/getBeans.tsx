@@ -1,4 +1,4 @@
-export async function getBeans() {
+export async function getBeans(): Promise<coffeeType[]> {
   const data = await fetch("https://fake-coffee-api.vercel.app/api");
   if (!data.ok) {
     throw new Error("Error, check request");
