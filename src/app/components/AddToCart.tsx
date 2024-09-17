@@ -1,10 +1,14 @@
 "use client";
+import { useContext } from "react";
+import { CartContext } from "../context";
+
 interface addCartProps {
   id: number;
 }
 const AddToCart = ({ id }: addCartProps) => {
+  const {cartContent, setCartContent} = useContext(CartContext);
   function addToCart() {
-    console.log(`Add ${id} to cart`);
+    setCartContent([...cartContent, String(id)]);
   }
   return (
     <button
