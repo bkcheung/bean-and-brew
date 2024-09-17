@@ -2,6 +2,8 @@
 import { use, useContext } from "react";
 import { CartContext } from "../context";
 import { coffeeType } from "../utils/getBeans";
+import EmptyCart from "../components/EmptyCart";
+import CartProduct from "../components/CartProduct";
 
 export default function Cart() {
   let userCart;
@@ -9,7 +11,7 @@ export default function Cart() {
   const { cartContent, beans } = useContext(CartContext);
   if (beans !== null) coffeeBeans = use(beans);
   if (cartContent.length == 0) {
-    userCart = <div>Cart is empty</div>;
+    userCart = <EmptyCart />;
   } else if (beans === null) {
     userCart = <div>Error: beans cannot be found, please try again later</div>;
   } else {
@@ -17,13 +19,13 @@ export default function Cart() {
       const product = coffeeBeans.filter(
         (bean: coffeeType) => bean.id === Number(id),
       )[0];
-      return <div key={index}>{product?.name}</div>;
+      return <CartProduct coffee={product} />;
     });
   }
   return (
     <div className="text-black flex flex-col items-center">
       <h4 className="text-3xl py-8">Cart</h4>
-      <div className="flex flex-col">{userCart}</div>
+      <div className="flex flex-col w-[90%] lg:w-[70%]">{userCart}</div>
     </div>
   );
 }
