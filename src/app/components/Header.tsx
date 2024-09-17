@@ -20,7 +20,7 @@ const Header = () => {
           />
         </Link>
       </div>
-      <h2 className="p-1 min-h-4 bg-[#EFF3EC] text-center">
+      <h2 className="p-1 min-h-4 bg-light-grey text-center">
         Freshly roasted small-batch coffee beans
       </h2>
     </div>
