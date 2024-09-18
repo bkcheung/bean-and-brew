@@ -86,5 +86,20 @@ describe("Cart page", () => {
       const p2 = screen.getByText("Golden Sunrise");
       expect(p1).toBeInTheDocument;
       expect(p2).toBeInTheDocument;
+    }),
+    it("renders checkout button", () => {
+      render(
+        <CartContext.Provider
+          value={{
+            cartContent: [null!,1],
+            setCartContent: () => {},
+            beans: beans,
+          }}
+        >
+          <Cart />
+        </CartContext.Provider>,
+      );
+      const checkout = screen.getByText("Checkout",{exact:false});
+      expect(checkout).toBeInTheDocument;
     });
 });
