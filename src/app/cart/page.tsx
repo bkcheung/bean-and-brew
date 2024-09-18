@@ -1,10 +1,10 @@
 "use client";
 import { use, useContext } from "react";
 import Link from "next/link";
-import { CartContext } from "../context";
-import { coffeeType } from "../utils/getBeans";
 import EmptyCart from "../components/EmptyCart";
 import CartProduct from "../components/CartProduct";
+import { CartContext } from "../context";
+import { coffeeType } from "../utils/getBeans";
 import { numItems } from "../utils/cartFunctions";
 
 export default function Cart() {
@@ -20,7 +20,7 @@ export default function Cart() {
     userCart = <div>Error: beans cannot be found, please try again later</div>;
   } else {
     userCart = cartContent.map((qty, index) => {
-      if (qty === 0) return;
+      if (qty === 0 || qty === null || qty === undefined) return;
       const product = coffeeBeans.filter(
         (bean: coffeeType) => bean.id === index,
       )[0];

@@ -14,6 +14,7 @@ function addToCart(
     updatedCart[id]++;
     setCartContent(updatedCart);
   }
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
 }
 function removeFromCart(
   id: number,
@@ -24,6 +25,7 @@ function removeFromCart(
   if (cartContent[id] !== undefined && cartContent[id] !== 0) {
     updatedCart[id]--;
     setCartContent(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   }
 }
 function numItems(cartContent: number[]) {
