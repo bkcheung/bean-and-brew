@@ -17,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-serif antialiased">
-        <Header />
-        <CartProvider beans={getBeans()}>{children}</CartProvider>
+        <CartProvider beans={getBeans()}>
+          <Header />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
