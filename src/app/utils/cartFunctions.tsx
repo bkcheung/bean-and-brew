@@ -1,13 +1,11 @@
 "use client";
-import { useContext, Dispatch, SetStateAction } from "react";
-import { CartContext } from "../context";
+import { Dispatch, SetStateAction } from "react";
 
 function addToCart(
   id: number,
   cartContent: number[],
   setCartContent: Dispatch<SetStateAction<number[]>>,
 ) {
-  // const { cartContent, setCartContent } = useContext(CartContext);
   const updatedCart = structuredClone(cartContent);
   if (cartContent[id] === undefined) {
     updatedCart[id] = 1;
@@ -22,7 +20,6 @@ function removeFromCart(
   cartContent: number[],
   setCartContent: Dispatch<SetStateAction<number[]>>,
 ) {
-  // const { cartContent, setCartContent } = useContext(CartContext);
   const updatedCart = structuredClone(cartContent);
   if (cartContent[id] !== undefined) {
     updatedCart[id]--;
