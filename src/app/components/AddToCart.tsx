@@ -9,11 +9,11 @@ const AddToCart = ({ id }: addCartProps) => {
   const { cartContent, setCartContent } = useContext(CartContext);
   function addToCart() {
     const updatedCart = structuredClone(cartContent);
-    if(cartContent[id]===undefined){
+    if (cartContent[id] === undefined) {
       updatedCart[id] = 1;
       setCartContent(updatedCart);
-    } else{
-      updatedCart[id]++; 
+    } else {
+      updatedCart[id]++;
       setCartContent(updatedCart);
     }
   }

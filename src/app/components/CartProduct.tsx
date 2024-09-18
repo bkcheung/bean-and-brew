@@ -18,11 +18,13 @@ const CartProduct = ({ coffee, qty }: cartProps) => {
         />
       </div>
       <div className="flex flex-col m-4">
-      <Link href={`shop/${coffee.id}`} 
-            className="text-xl hover:text-dark-green hover:underline">
-            {coffee.name}
-      </Link>
-      <div className="flex text-lg my-4">
+        <Link
+          href={`shop/${coffee.id}`}
+          className="text-xl hover:text-dark-green hover:underline"
+        >
+          {coffee.name}
+        </Link>
+        <div className="flex text-lg my-4">
           <button onClick={() => console.log("- qty")}>-</button>
           <div className="mx-4"> {qty} </div>
           <button onClick={() => console.log("+ qty")}>+</button>
