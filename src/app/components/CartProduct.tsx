@@ -13,7 +13,7 @@ interface cartProps {
 const CartProduct = ({ coffee, qty }: cartProps) => {
   const { cartContent, setCartContent } = useContext(CartContext);
   return (
-    <div className="flex items-center justify-around rounded-xl bg-light-grey/50 m-4">
+    <div className="flex items-center justify-around rounded-xl bg-light-grey/50 my-4 shadow-md">
       <div className="relative w-[30vw] h-[25vh]">
         <Image
           fill
