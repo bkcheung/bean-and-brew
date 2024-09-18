@@ -7,7 +7,7 @@ function addToCart(
   cartContent: number[],
   setCartContent: Dispatch<SetStateAction<number[]>>,
 ) {
-  const updatedCart = structuredClone(cartContent);
+  const updatedCart = cartContent;
   if (cartContent[id] === undefined) {
     updatedCart[id] = qty;
     setCartContent(updatedCart);

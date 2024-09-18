@@ -52,14 +52,14 @@ describe("Cart page", () => {
         <Cart />
       </CartContext.Provider>,
     );
-    const cart = screen.getByText("Cart is empty");
+    const cart = screen.getByText("Your cart is empty");
     expect(cart).toBeInTheDocument;
   }),
     it("renders product in cart", () => {
       render(
         <CartContext.Provider
           value={{
-            cartContent: ["1"],
+            cartContent: [null!,1],
             setCartContent: () => {},
             beans: beans,
           }}
