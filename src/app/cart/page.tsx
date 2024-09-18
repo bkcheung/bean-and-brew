@@ -12,7 +12,7 @@ export default function Cart() {
   let subTotal = 0;
   let coffeeBeans: coffeeType[];
   const { cartContent, beans } = useContext(CartContext);
-  let empty = numItems(cartContent) === 0;
+  const empty = numItems(cartContent) === 0;
   if (beans !== null) coffeeBeans = use(beans);
   if (empty) {
     userCart = <EmptyCart />;
