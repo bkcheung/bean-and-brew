@@ -69,5 +69,22 @@ describe("Cart page", () => {
       );
       const product = screen.getByText("Signature Blend");
       expect(product).toBeInTheDocument;
+    }),
+    it("renders multiple products in cart", () => {
+      render(
+        <CartContext.Provider
+          value={{
+            cartContent: [null!,1,1],
+            setCartContent: () => {},
+            beans: beans,
+          }}
+        >
+          <Cart />
+        </CartContext.Provider>,
+      );
+      const p1 = screen.getByText("Signature Blend");
+      const p2 = screen.getByText("Golden Sunrise");
+      expect(p1).toBeInTheDocument;
+      expect(p2).toBeInTheDocument;
     });
 });
