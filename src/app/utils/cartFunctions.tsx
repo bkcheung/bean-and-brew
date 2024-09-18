@@ -21,9 +21,12 @@ function removeFromCart(
   setCartContent: Dispatch<SetStateAction<number[]>>,
 ) {
   const updatedCart = structuredClone(cartContent);
-  if (cartContent[id] !== undefined) {
+  if (cartContent[id] !== undefined && cartContent[id] !== 0) {
     updatedCart[id]--;
     setCartContent(updatedCart);
   }
 }
-export { addToCart, removeFromCart };
+function numItems(cartContent: number[]) {
+  return cartContent.reduce((partialSum, a) => partialSum + a);
+}
+export { addToCart, removeFromCart, numItems };
