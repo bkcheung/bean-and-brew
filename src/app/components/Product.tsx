@@ -27,7 +27,7 @@ const Product = ({ coffee }: productProps) => {
         </h2>
       </div>
       <h1>${coffee.price}</h1>
-      <AddToCart id={coffee.id} />
+      <AddToCart id={coffee.id} style="items-center" />
     </div>
   );
 };

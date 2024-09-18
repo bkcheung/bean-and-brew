@@ -3,15 +3,16 @@ import { Dispatch, SetStateAction } from "react";
 
 function addToCart(
   id: number,
+  qty: number,
   cartContent: number[],
   setCartContent: Dispatch<SetStateAction<number[]>>,
 ) {
   const updatedCart = structuredClone(cartContent);
   if (cartContent[id] === undefined) {
-    updatedCart[id] = 1;
+    updatedCart[id] = qty;
     setCartContent(updatedCart);
   } else {
-    updatedCart[id]++;
+    updatedCart[id] += qty;
     setCartContent(updatedCart);
   }
   localStorage.setItem("cart", JSON.stringify(updatedCart));

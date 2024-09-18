@@ -1,7 +1,9 @@
+// 'use client'
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "@/app/components/AddToCart";
 import { getBeans, coffeeType } from "@/app/utils/getBeans";
+// import { useState } from "react";
 
 export default async function coffeePage({
   params,
@@ -41,7 +43,7 @@ export default async function coffeePage({
             <div className="text-gray-500 py-2">
               ${coffee.price}/{coffee.weight}g
             </div>
-            <AddToCart id={coffee.id} />
+            <AddToCart id={coffee.id} style="items-end" />
           </div>
         </div>
       </div>
