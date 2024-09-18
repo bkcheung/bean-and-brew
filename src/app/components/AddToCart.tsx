@@ -8,7 +8,14 @@ interface addCartProps {
 const AddToCart = ({ id }: addCartProps) => {
   const { cartContent, setCartContent } = useContext(CartContext);
   function addToCart() {
-    setCartContent([...cartContent, String(id)]);
+    const updatedCart = structuredClone(cartContent);
+    if(cartContent[id]===undefined){
+      updatedCart[id] = 1;
+      setCartContent(updatedCart);
+    } else{
+      updatedCart[id]++; 
+      setCartContent(updatedCart);
+    }
   }
   return (
     <button
