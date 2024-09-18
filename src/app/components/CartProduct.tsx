@@ -13,8 +13,11 @@ interface cartProps {
 const CartProduct = ({ coffee, qty }: cartProps) => {
   const { cartContent, setCartContent } = useContext(CartContext);
   return (
-    <div className="flex items-center justify-around rounded-xl bg-light-grey/50 my-4 shadow-md">
-      <div className="relative w-[30vw] h-[25vh]">
+    <div
+      className="flex items-center justify-around rounded-xl bg-light-grey/50 
+                    my-4 shadow-md w-full md:w-[80%] h-[200px]"
+    >
+      <div className="relative w-[30vw] sm:w-[150px] h-[25vh]">
         <Image
           fill
           src={coffee.image_url}
@@ -35,12 +38,14 @@ const CartProduct = ({ coffee, qty }: cartProps) => {
             onClick={() =>
               removeFromCart(coffee.id, cartContent, setCartContent)
             }
+            className="px-2"
           >
             -
           </button>
-          <div className="mx-4"> {qty} </div>
+          <div className="mx-4">{qty}</div>
           <button
             onClick={() => addToCart(coffee.id, cartContent, setCartContent)}
+            className="px-2"
           >
             +
           </button>

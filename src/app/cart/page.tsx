@@ -7,7 +7,7 @@ import CartProduct from "../components/CartProduct";
 import { numItems } from "../utils/cartFunctions";
 
 export default function Cart() {
-  function checkout(){
+  function checkout() {
     console.log("Checkout!");
   }
   let userCart;
@@ -33,13 +33,27 @@ export default function Cart() {
   return (
     <div className="text-black flex flex-col items-center">
       <h4 className="text-3xl py-8">Cart</h4>
-      <div className="flex flex-col w-[85vw] lg:w-[70vw]">{userCart}</div>
-      {!empty && <div className="flex flex-col items-center">
-        <button onClick={checkout} 
-                className="bg-light-green/50 p-4 m-4 rounded-xl hover:bg-light-green w-[85vw] lg:w-[70vw]"
-                style={{ border: "1px, outset, rgb(200 200 200 / 0.85)" }}
-        >Checkout - ${subTotal.toFixed(2)}</button>
-      </div>}
+      <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col w-[85vw] md:w-[50vw] items-center">
+          {userCart}
+        </div>
+        {!empty && (
+          <div className="flex w-[85vw] md:w-[50vw] justify-center">
+            <div
+              className="flex justify-center items-center w-full md:w-[80%] 
+                        md:bg-light-grey/50 md:h-[200px] my-4 rounded-xl md:shadow-md"
+            >
+              <button
+                onClick={checkout}
+                className="p-4 my-2 rounded-xl w-full md:w-[80%] max-h-[100px] 
+                       bg-light-green/50 hover:bg-light-green shadow-lg"
+              >
+                Checkout - ${subTotal.toFixed(2)}
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

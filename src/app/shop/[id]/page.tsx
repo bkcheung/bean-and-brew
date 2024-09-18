@@ -31,13 +31,13 @@ export default async function coffeePage({
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="flex flex-col md:justify-center">
+        <div className="flex flex-col md:justify-center items-end">
           <div className="flex-1 px-8 md:flex-none">
             <div className="text-2xl">{coffee.name}</div>
             <div className="py-2">{coffee.description}</div>
             <div className="text-gray-700 py-2">Tasting notes: {tastes}</div>
           </div>
-          <div className="p-4 flex flex-col items-end">
+          <div className="p-4 flex flex-col items-end w-full sm:w-[80%] md:w-[70%] lg:w-[60%] mr-8">
             <div className="text-gray-500 py-2">
               ${coffee.price}/{coffee.weight}g
             </div>

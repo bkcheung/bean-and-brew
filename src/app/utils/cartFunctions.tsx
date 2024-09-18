@@ -27,7 +27,7 @@ function removeFromCart(
   }
 }
 function numItems(cartContent: number[]) {
-  if(cartContent.length===0) return 0;
+  if (cartContent.length === 0) return 0;
   return cartContent.reduce((partialSum, a) => partialSum + a);
 }
 export { addToCart, removeFromCart, numItems };
