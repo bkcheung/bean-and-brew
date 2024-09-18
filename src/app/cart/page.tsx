@@ -7,6 +7,9 @@ import CartProduct from "../components/CartProduct";
 import { numItems } from "../utils/cartFunctions";
 
 export default function Cart() {
+  function checkout(){
+    console.log("Checkout!");
+  }
   let userCart;
   let subTotal = 0;
   let coffeeBeans: coffeeType[];
@@ -30,8 +33,13 @@ export default function Cart() {
   return (
     <div className="text-black flex flex-col items-center">
       <h4 className="text-3xl py-8">Cart</h4>
-      <div className="flex flex-col w-[90%] lg:w-[70%]">{userCart}</div>
-      {!empty && <div className="text-right">Subtotal: ${subTotal}</div>}
+      <div className="flex flex-col w-[85vw] lg:w-[70vw]">{userCart}</div>
+      {!empty && <div className="flex flex-col items-center">
+        <button onClick={checkout} 
+                className="bg-light-green/50 p-4 m-4 rounded-xl hover:bg-light-green w-[85vw] lg:w-[70vw]"
+                style={{ border: "1px, outset, rgb(200 200 200 / 0.85)" }}
+        >Checkout - ${subTotal}</button>
+      </div>}
     </div>
   );
 }
