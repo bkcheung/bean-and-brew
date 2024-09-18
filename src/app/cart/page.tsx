@@ -7,10 +7,12 @@ import CartProduct from "../components/CartProduct";
 
 export default function Cart() {
   let userCart;
+  let subTotal = 0;
   let coffeeBeans: coffeeType[];
   const { cartContent, beans } = useContext(CartContext);
+  const empty = cartContent.length === 0;
   if (beans !== null) coffeeBeans = use(beans);
-  if (cartContent.length == 0) {
+  if (empty) {
     userCart = <EmptyCart />;
   } else if (beans === null) {
     userCart = <div>Error: beans cannot be found, please try again later</div>;
@@ -19,6 +21,7 @@ export default function Cart() {
       const product = coffeeBeans.filter(
         (bean: coffeeType) => bean.id === index,
       )[0];
+      subTotal += product.price * qty;
       return <CartProduct key={index} coffee={product} qty={qty} />;
     });
   }
@@ -26,6 +29,7 @@ export default function Cart() {
     <div className="text-black flex flex-col items-center">
       <h4 className="text-3xl py-8">Cart</h4>
       <div className="flex flex-col w-[90%] lg:w-[70%]">{userCart}</div>
+      {!empty && <div className="text-right">Subtotal: ${subTotal}</div>}
     </div>
   );
 }
