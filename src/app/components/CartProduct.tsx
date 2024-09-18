@@ -44,7 +44,7 @@ const CartProduct = ({ coffee, qty }: cartProps) => {
           >
             +
           </button>
-          <div className="ml-auto">{coffee.price * qty}</div>
+          <div className="ml-auto">{(coffee.price * qty).toFixed(2)}</div>
         </div>
       </div>
     </div>

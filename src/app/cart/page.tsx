@@ -38,7 +38,7 @@ export default function Cart() {
         <button onClick={checkout} 
                 className="bg-light-green/50 p-4 m-4 rounded-xl hover:bg-light-green w-[85vw] lg:w-[70vw]"
                 style={{ border: "1px, outset, rgb(200 200 200 / 0.85)" }}
-        >Checkout - ${subTotal}</button>
+        >Checkout - ${subTotal.toFixed(2)}</button>
       </div>}
     </div>
   );
