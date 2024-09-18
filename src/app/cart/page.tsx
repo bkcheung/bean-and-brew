@@ -15,12 +15,12 @@ export default function Cart() {
   } else if (beans === null) {
     userCart = <div>Error: beans cannot be found, please try again later</div>;
   } else {
-    userCart = cartContent.map((id: string, index: number) => {
+    userCart = cartContent.map((qty, index)=>{
       const product = coffeeBeans.filter(
-        (bean: coffeeType) => bean.id === Number(id),
-      )[0];
-      return <CartProduct coffee={product} />;
-    });
+          (bean: coffeeType) => bean.id === index,
+        )[0];
+      return <CartProduct key={index} coffee={product} qty={qty}/>
+    })
   }
   return (
     <div className="text-black flex flex-col items-center">
