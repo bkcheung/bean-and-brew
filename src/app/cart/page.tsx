@@ -1,5 +1,6 @@
 "use client";
 import { use, useContext } from "react";
+import Link from "next/link";
 import { CartContext } from "../context";
 import { coffeeType } from "../utils/getBeans";
 import EmptyCart from "../components/EmptyCart";
@@ -7,9 +8,6 @@ import CartProduct from "../components/CartProduct";
 import { numItems } from "../utils/cartFunctions";
 
 export default function Cart() {
-  function checkout() {
-    console.log("Checkout!");
-  }
   let userCart;
   let subTotal = 0;
   let coffeeBeans: coffeeType[];
@@ -43,13 +41,13 @@ export default function Cart() {
               className="flex justify-center items-center w-full md:w-[80%] 
                         md:bg-light-grey/50 md:h-[200px] my-4 rounded-xl md:shadow-md"
             >
-              <button
-                onClick={checkout}
+              <Link
+                href="/checkout"
                 className="p-4 my-2 rounded-xl w-full md:w-[80%] max-h-[100px] 
-                       bg-light-green/50 hover:bg-light-green shadow-lg"
+                       bg-light-green/50 hover:bg-light-green shadow-lg text-center"
               >
                 Checkout - ${subTotal.toFixed(2)}
-              </button>
+              </Link>
             </div>
           </div>
         )}
