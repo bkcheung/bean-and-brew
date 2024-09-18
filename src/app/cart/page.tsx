@@ -4,13 +4,14 @@ import { CartContext } from "../context";
 import { coffeeType } from "../utils/getBeans";
 import EmptyCart from "../components/EmptyCart";
 import CartProduct from "../components/CartProduct";
+import { numItems } from "../utils/cartFunctions";
 
 export default function Cart() {
   let userCart;
   let subTotal = 0;
   let coffeeBeans: coffeeType[];
   const { cartContent, beans } = useContext(CartContext);
-  const empty = cartContent.length === 0;
+  let empty = numItems(cartContent) === 0;
   if (beans !== null) coffeeBeans = use(beans);
   if (empty) {
     userCart = <EmptyCart />;
@@ -18,6 +19,7 @@ export default function Cart() {
     userCart = <div>Error: beans cannot be found, please try again later</div>;
   } else {
     userCart = cartContent.map((qty, index) => {
+      if (qty === 0) return;
       const product = coffeeBeans.filter(
         (bean: coffeeType) => bean.id === index,
       )[0];
