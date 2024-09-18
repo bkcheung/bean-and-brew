@@ -3,8 +3,9 @@ import Link from "next/link";
 import { coffeeType } from "../utils/getBeans";
 interface cartProps {
   coffee: coffeeType;
+  qty: number;
 }
-const CartProduct = ({ coffee }: cartProps) => {
+const CartProduct = ({ coffee, qty }: cartProps) => {
   return (
     <div className="flex items-center justify-around rounded-xl bg-light-grey/50 m-4">
       <div className="relative w-[30vw] h-[25vh]">
@@ -23,9 +24,9 @@ const CartProduct = ({ coffee }: cartProps) => {
       </Link>
       <div className="flex text-lg my-4">
           <button onClick={() => console.log("- qty")}>-</button>
-          <div className="mx-4"> 1 </div>
+          <div className="mx-4"> {qty} </div>
           <button onClick={() => console.log("+ qty")}>+</button>
-          <div className="ml-auto">{coffee.price}</div>
+          <div className="ml-auto">{coffee.price * qty}</div>
         </div>
       </div>
     </div>
