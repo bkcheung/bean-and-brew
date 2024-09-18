@@ -3,9 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "@/app/components/AddToCart";
 import { getBeans, coffeeType } from "@/app/utils/getBeans";
-// import { useState } from "react";
 
-export default async function coffeePage({
+export default async function CoffeePage({
   params,
 }: {
   params: { id: number };
