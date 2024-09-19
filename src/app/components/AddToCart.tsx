@@ -25,7 +25,6 @@ const AddToCart = ({ id, style = "" }: addCartProps) => {
       <div>
         Qty:
         <input
-          id="qty"
           type="number"
           defaultValue={1}
           onChange={updateQty}
