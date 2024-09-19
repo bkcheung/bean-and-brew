@@ -3,11 +3,11 @@ import { Dispatch, SetStateAction } from "react";
 
 function addToCart(
   id: number,
-  qty: number,
+  qty: number = 1,
   cartContent: number[],
   setCartContent: Dispatch<SetStateAction<number[]>>,
 ) {
-  const updatedCart = cartContent;
+  const updatedCart = structuredClone(cartContent);
   if (cartContent[id] === undefined) {
     updatedCart[id] = qty;
     setCartContent(updatedCart);
