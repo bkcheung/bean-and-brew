@@ -11,6 +11,7 @@ interface addCartProps {
 const AddToCart = ({ id, style = "" }: addCartProps) => {
   const { cartContent, setCartContent } = useContext(CartContext);
   const [qty, setQty] = useState(1);
+  const [buttonText, setButtonText] = useState("Add to Cart");
   function updateQty(e: React.ChangeEvent<HTMLInputElement>) {
     setQty(Number(e.target.value));
   }
@@ -18,9 +19,15 @@ const AddToCart = ({ id, style = "" }: addCartProps) => {
     <div className={cx("flex flex-col w-full ") + style}>
       <button
         className="p-2 my-2 rounded-xl w-[75%] bg-light-green/50 hover:bg-light-green shadow-lg"
-        onClick={() => addToCart(id, qty, cartContent, setCartContent)}
+        onClick={() => {
+          addToCart(id, qty, cartContent, setCartContent);
+          setButtonText("Adding...");
+          setTimeout(() => {
+            setButtonText("Add to Cart");
+          }, 750);
+        }}
       >
-        Add to Cart
+        {buttonText}
       </button>
       <div>
         Qty:
