@@ -1,6 +1,7 @@
 "use client";
 import { use, useContext } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import EmptyCart from "../components/EmptyCart";
 import CartProduct from "../components/CartProduct";
 import { CartContext } from "../context";
@@ -11,7 +12,7 @@ export default function Cart() {
   let userCart;
   let subTotal = 0;
   let coffeeBeans: coffeeType[];
-  const { cartContent, beans } = useContext(CartContext);
+  const { cartContent, setCartContent, beans } = useContext(CartContext);
   const empty = numItems(cartContent) === 0;
   if (beans !== null) coffeeBeans = use(beans);
   if (empty) {
@@ -43,10 +44,18 @@ export default function Cart() {
             >
               <Link
                 href="/checkout"
-                className="p-4 my-2 rounded-xl w-full md:w-[80%] max-h-[100px] 
-                       bg-light-green/50 hover:bg-light-green shadow-lg text-center"
+                className="flex justify-center w-[85vw] md:w-[50vw]"
               >
-                Checkout - ${subTotal.toFixed(2)}
+                <button
+                  onClick={() => {
+                    setCartContent([]);
+                    localStorage.setItem("cart", "[]");
+                  }}
+                  className="p-4 my-2 rounded-xl w-full md:w-[80%] max-h-[100px] 
+                bg-light-green/50 hover:bg-light-green shadow-lg text-center"
+                >
+                  Checkout - ${subTotal.toFixed(2)}
+                </button>
               </Link>
             </div>
           </div>
