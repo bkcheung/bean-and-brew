@@ -59,7 +59,7 @@ describe("Cart page", () => {
       render(
         <CartContext.Provider
           value={{
-            cartContent: [null!,1],
+            cartContent: [null!, 1],
             setCartContent: () => {},
             beans: beans,
           }}
@@ -74,7 +74,7 @@ describe("Cart page", () => {
       render(
         <CartContext.Provider
           value={{
-            cartContent: [null!,1,1],
+            cartContent: [null!, 1, 1],
             setCartContent: () => {},
             beans: beans,
           }}
@@ -91,7 +91,7 @@ describe("Cart page", () => {
       render(
         <CartContext.Provider
           value={{
-            cartContent: [null!,1],
+            cartContent: [null!, 1],
             setCartContent: () => {},
             beans: beans,
           }}
@@ -99,7 +99,7 @@ describe("Cart page", () => {
           <Cart />
         </CartContext.Provider>,
       );
-      const checkout = screen.getByText("Checkout",{exact:false});
+      const checkout = screen.getByText("Checkout", { exact: false });
       expect(checkout).toBeInTheDocument;
     });
 });
