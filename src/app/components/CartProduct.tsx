@@ -44,7 +44,7 @@ const CartProduct = ({ coffee, qty }: cartProps) => {
           </button>
           <div className="mx-4">{qty}</div>
           <button
-            onClick={() => addToCart(coffee.id, cartContent, setCartContent)}
+            onClick={() => addToCart(coffee.id, 1, cartContent, setCartContent)}
             className="px-2"
           >
             +
