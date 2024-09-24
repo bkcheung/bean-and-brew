@@ -20,12 +20,18 @@ const Menu = () => {
       >
         <div
           className={cx(
-            "bg-white/90  fixed top-0 left-0 min-h-[100vh] w-[75vw] \
+            "bg-white/95  fixed top-0 left-0 min-h-[100vh] w-[75vw] \
             max-w-[375px] flex flex-col justify-center text-3xl",
             showMenu ? "show" : "hidden",
           )}
           aria-label="menu"
         >
+          <button
+            className="absolute top-10 right-10 text-gray-400 text-base"
+            onClick={toggleMenu}
+          >
+            close menu
+          </button>
           <Link className="p-10" href="/" onClick={toggleMenu}>
             Home
           </Link>
