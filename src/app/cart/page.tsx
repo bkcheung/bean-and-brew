@@ -39,7 +39,7 @@ export default function Cart() {
           <div className="flex w-[85vw] md:w-[50vw] justify-center">
             <div
               className="flex justify-center items-center w-full md:w-[80%] 
-                        md:bg-light-grey/50 md:h-[200px] my-4 rounded-xl md:shadow-md"
+                        md:bg-light-grey/50 md:h-[323.5px] my-4 rounded-xl md:shadow-md"
             >
               <Link
                 href="/checkout"
