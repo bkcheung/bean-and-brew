@@ -11,22 +11,22 @@ const Header = () => {
   const cartCount = numItems(cartContent);
   return (
     <div className="sticky top-0 z-40" aria-label="header">
-      <div className="flex items-center justify-around pt-12 pb-6 min-h-28 bg-[url('/images/leaf.jpg')] bg-cover">
+      <div className="flex items-center justify-around pt-12 pb-6 h-[15vh] bg-[url('/images/leaf.jpg')] bg-cover">
         <Menu />
-        <Link href="/" className="text-3xl text-white">
+        <Link href="/" className="text-3xl md:text-5xl text-white">
           Bean & Brew
         </Link>
-        <Link href="/cart" className="relative">
+        <Link href="/cart" className="relative flex items-center">
           <Image
-            className=""
+            className="w-10"
             src="/images/bag.png"
             alt="bag logo"
-            width={30}
-            height={30}
+            width={100}
+            height={100}
           />
           {cartCount > 0 && (
             <div
-              className="bg-green-950/50 rounded-full text-xs w-5 h-5 text-center 
+              className="bg-green-950/50 rounded-full w-7 h-7 text-center 
                          text-white absolute top-[-20%] right-[-30%]"
             >
               {cartCount}

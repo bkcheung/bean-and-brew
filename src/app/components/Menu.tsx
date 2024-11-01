@@ -48,7 +48,7 @@ const Menu = () => {
         ></button>
       </div>
       <button onClick={toggleMenu}>
-        <Image src="/images/menu.png" alt="menu logo" width={30} height={30} />
+        <Image className="w-10" src="/images/menu.png" alt="menu logo" width={100} height={100} />
       </button>
     </div>
   );
