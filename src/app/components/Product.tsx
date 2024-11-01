@@ -20,6 +20,7 @@ const Product = ({ coffee }: productProps) => {
             alt={coffee.name}
             sizes="50vw"
             style={{ objectFit: "cover" }}
+            unoptimized
           />
         </Link>
         <h2 className="group-hover:text-dark-green group-hover:underline">
