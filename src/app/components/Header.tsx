@@ -11,7 +11,7 @@ const Header = () => {
   const cartCount = numItems(cartContent);
   return (
     <div className="sticky top-0 z-40" aria-label="header">
-      <div className="flex items-center justify-around pt-12 pb-6 h-[15vh] bg-[url('/images/leaf.jpg')] bg-cover">
+      <div className="flex items-center justify-around pt-8 h-[15vh] md:pt-0 bg-[url('/images/leaf.jpg')] bg-cover">
         <Menu />
         <Link href="/" className="text-3xl md:text-5xl text-white">
           Bean & Brew
