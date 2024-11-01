@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main
       className="bg-[url('/images/bkg.jpg')] bg-cover bg-center
-                   min-h-[calc(100vh-8rem)] flex justify-center"
+                   min-h-[calc(85vh-1rem)] flex justify-center"
     >
       <Link
         className="bg-white/80 text-center p-2 h-14 rounded-lg text-3xl 
