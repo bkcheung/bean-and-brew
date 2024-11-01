@@ -28,8 +28,9 @@ export default async function CoffeePage({
             fill
             src={coffee.image_url}
             alt={coffee.name}
-            sizes="100vw"
+            sizes="90vh"
             style={{ objectFit: "cover" }}
+            priority
           />
         </div>
         <div className="flex flex-col md:justify-center items-end">
