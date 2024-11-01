@@ -5,7 +5,7 @@ export async function getBeans(): Promise<coffeeType[]> {
   }
   const beans = await data.json();
   return beans.filter(
-    (bean: coffeeType) => bean.id !== 5 && bean.id !== 11 && bean.id !== 16,
+    (bean: coffeeType) => bean.id !== 5 && bean.id !== 11 && bean.id !== 16 && bean.id !== 17,
   );
 }
 
