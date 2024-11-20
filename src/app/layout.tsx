@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
 import { CartProvider } from "./context";
+import { Providers } from "./providers";
 import { getBeans } from "./utils/getBeans";
 
 export const metadata: Metadata = {
@@ -19,7 +20,9 @@ export default function RootLayout({
       <body className="font-serif antialiased">
         <CartProvider beans={getBeans()}>
           <Header />
-          {children}
+          <Providers>
+            {children}
+          </Providers>
         </CartProvider>
       </body>
     </html>
