@@ -11,18 +11,21 @@ const Header = () => {
   const cartCount = numItems(cartContent);
   return (
     <div className="sticky top-0 z-40" aria-label="header">
-      <div className="flex items-center justify-around pt-8 h-[15vh] md:pt-0 bg-[url('/images/leaf.jpg')] bg-cover">
-        <Menu />
-        <Link href="/" className="text-3xl md:text-5xl text-white">
+      <div className="flex items-center justify-around h-[17vh] bg-[url('/images/plaster.jpg')] 
+                      bg-cover shadow-lg bg-center">
+        <Link href="/" className="text-3xl md:text-5xl mr-auto pl-8 md:pl-16">
           Bean & Brew
         </Link>
-        <Link href="/cart" className="relative flex items-center">
+        <Link href="/shop" className="text-2xl md:text-3xl ml-2 md:ml-8">
+          Shop
+        </Link>
+        <Link href="/cart" className="relative flex items-center mx-6 md:mx-8">
           <Image
-            className="w-10"
+            className="w-8 invert"
             src="/images/bag.png"
             alt="bag logo"
-            width={100}
-            height={100}
+            width={50}
+            height={50}
           />
           {cartCount > 0 && (
             <div
@@ -34,9 +37,6 @@ const Header = () => {
           )}
         </Link>
       </div>
-      <h2 className="p-1 min-h-4 bg-light-grey text-center">
-        Freshly roasted small-batch coffee beans
-      </h2>
     </div>
   );
 };
