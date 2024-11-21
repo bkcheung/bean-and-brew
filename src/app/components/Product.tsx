@@ -25,13 +25,13 @@ const Product = ({ coffee, bubble }: productProps) => {
         />
       </Link>
       {bubble &&
-        <div className="absolute min-w-[42vh] min-h-[42vh]">
+        <div className="absolute w-[42vh] h-[42vh]">
           <Image
             fill
             src="/images/bubble.png"
             alt="bubble"
             sizes="32vh"
-            className="opacity-35 -z-10 object-contain"
+            className="opacity-35 -z-10 object-contain drop-shadow-md"
             priority
           />
         </div>
