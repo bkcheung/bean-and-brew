@@ -18,7 +18,7 @@ export default async function CoffeePage({
     <div className="flex flex-col">
       <Link
         href="/shop"
-        className="p-4 text-gray-700 hover:text-dark-green hover:underline"
+        className="p-4 text-gray-700 hover:text-[#888781] hover:underline"
       >
         ↩ Back
       </Link>
