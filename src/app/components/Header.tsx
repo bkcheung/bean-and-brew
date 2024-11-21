@@ -11,7 +11,7 @@ const Header = () => {
   const cartCount = numItems(cartContent);
   return (
     <div className="sticky top-0 z-40" aria-label="header">
-      <div className="flex items-center justify-around h-[17vh] bg-[url('/images/plaster.jpg')] 
+      <div className="flex items-center justify-around h-[17vh] bg-[url('/images/silk.jpg')] 
                       bg-cover shadow-lg bg-center">
         <Link href="/" className="text-3xl md:text-5xl mr-auto pl-8 md:pl-16">
           Bean & Brew
@@ -29,8 +29,8 @@ const Header = () => {
           />
           {cartCount > 0 && (
             <div
-              className="bg-green-950/50 rounded-full w-7 h-7 text-center 
-                         text-white absolute top-[-20%] right-[-30%]"
+              className="bg-gray-700/75 rounded-full w-6 h-6 text-center 
+                         text-white absolute top-[-15%] right-[-40%]"
             >
               {cartCount}
             </div>
