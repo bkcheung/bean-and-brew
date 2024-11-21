@@ -8,27 +8,21 @@ interface productProps{
     beans:coffeeType[]
 }
 const ProductParallax = ({beans}:productProps) => {
+    const prods = beans.slice(0,6).map((bean:coffeeType)=>{
+        const x = Math.random();
+        const y = Math.random();
+        return(
+            <MouseParallaxChild key={bean.id} factorX={x} factorY={y}>
+                <div>
+                    <Product key={bean.id} coffee={bean} />
+                </div>
+            </MouseParallaxChild>
+        )
+    })
     return (
         <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1} 
-            className="grid grid-cols-2 gap-[10em] pb-16">
-            <MouseParallaxChild factorX={0.3} factorY={0.5}>
-                <Product key={beans[0].id} coffee={beans[0]} />
-            </MouseParallaxChild>
-            <MouseParallaxChild factorX={0.5} factorY={0.3}>
-                <Product key={beans[1].id} coffee={beans[1]} />
-            </MouseParallaxChild>
-            <MouseParallaxChild factorX={0.4} factorY={0.2}>
-                <Product key={beans[2].id} coffee={beans[2]} />
-            </MouseParallaxChild>
-            <MouseParallaxChild factorX={0.2} factorY={0.4}>
-                <Product key={beans[3].id} coffee={beans[3]} />
-            </MouseParallaxChild>
-            <MouseParallaxChild factorX={0.3} factorY={0.5}>
-                <Product key={beans[4].id} coffee={beans[4]} />
-            </MouseParallaxChild>
-            <MouseParallaxChild factorX={0.5} factorY={0.3}>
-                <Product key={beans[5].id} coffee={beans[5]} />
-            </MouseParallaxChild>
+            className="grid md:grid-cols-2 md:gap-x-[40em] md:gap-y-[5em] pb-16">
+            {prods}
         </MouseParallaxContainer>
     )
 }
