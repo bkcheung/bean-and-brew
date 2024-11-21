@@ -3,19 +3,16 @@ import { coffeeType } from "../utils/getBeans";
 import Product from "./Product";
 import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 
-
 interface productProps{
     beans:coffeeType[]
 }
 const ProductParallax = ({beans}:productProps) => {
     const prods = beans.slice(0,6).map((bean:coffeeType)=>{
-        const x = Math.random();
-        const y = Math.random();
+        const x = Math.random()*(0.8-0.4)+0.4;
+        const y = Math.random()*(0.8-0.4)+0.4;
         return(
-            <MouseParallaxChild key={bean.id} factorX={x} factorY={y}>
-                <div>
-                    <Product key={bean.id} coffee={bean} />
-                </div>
+            <MouseParallaxChild key={bean.id} factorX={x} factorY={y} className="w-auto">
+                <Product key={bean.id} coffee={bean} bubble={true}/>
             </MouseParallaxChild>
         )
     })

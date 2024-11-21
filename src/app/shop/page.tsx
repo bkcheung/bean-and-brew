@@ -4,7 +4,7 @@ import Product from "../components/Product";
 export default async function Shop() {
   const filteredBeans = await getBeans();
   const coffee = filteredBeans.map((coffee: coffeeType) => {
-    return <Product key={coffee.id} coffee={coffee} />;
+    return <Product key={coffee.id} coffee={coffee} bubble={false}/>;
   });
   return (
     <div className=" flex flex-col items-center">
