@@ -14,7 +14,7 @@ const CartProduct = ({ coffee, qty }: cartProps) => {
   const { cartContent, setCartContent } = useContext(CartContext);
   return (
     <div
-      className="flex items-center justify-around rounded-xl bg-light-grey/50 
+      className="flex items-center justify-around rounded-xl bg-[#E3E1D6]/25 
                     my-4 shadow-md w-full md:w-[80%]"
     >
       <div className="relative w-[30vw] sm:w-[150px] min-h-[25vh]">
@@ -29,7 +29,7 @@ const CartProduct = ({ coffee, qty }: cartProps) => {
       <div className="flex flex-col m-4">
         <Link
           href={`shop/${coffee.id}`}
-          className="text-xl hover:text-dark-green hover:underline"
+          className="text-xl hover:text-[#888781] hover:underline"
         >
           {coffee.name}
         </Link>

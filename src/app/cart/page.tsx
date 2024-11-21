@@ -39,7 +39,7 @@ export default function Cart() {
           <div className="flex w-[85vw] md:w-[50vw] justify-center">
             <div
               className="flex justify-center items-center w-full md:w-[80%] 
-                        md:bg-light-grey/50 md:h-[323.5px] my-4 rounded-xl md:shadow-md"
+                        md:bg-[#E3E1D6]/25 md:h-[323.5px] my-4 rounded-xl md:shadow-md"
             >
               <Link
                 href="/checkout"
@@ -51,7 +51,7 @@ export default function Cart() {
                     localStorage.setItem("cart", "[]");
                   }}
                   className="p-4 my-2 rounded-xl w-full md:w-[80%] max-h-[100px] 
-                bg-light-green/50 hover:bg-light-green shadow-lg text-center"
+                bg-[#E3E1D6] hover:bg-[#F4F3EE] shadow-lg text-center"
                 >
                   Checkout - ${subTotal.toFixed(2)}
                 </button>

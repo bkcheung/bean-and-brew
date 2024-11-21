@@ -23,7 +23,7 @@ const Product = ({ coffee }: productProps) => {
             priority
           />
         </Link>
-        <h2 className="group-hover:text-dark-green group-hover:underline">
+        <h2 className="group-hover:text-[#888781] group-hover:underline">
           {coffee.name}
         </h2>
       </div>
