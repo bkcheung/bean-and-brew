@@ -16,12 +16,12 @@ const AddToCart = ({ id, style = "" }: addCartProps) => {
     setQty(Number(e.target.value));
   }
   return (
-    <div className={cx("flex flex-col w-full ") + style}>
+    <div className={cx("flex flex-col w-full md:w-3/4 ") + style}>
       <button
-        className="p-2 my-2 rounded-xl w-[75%] bg-light-green/50 hover:bg-light-green shadow-lg"
+        className="p-2 my-2 rounded-xl w-[65%] bg-[#F4F3EE] hover:bg-[#E3E1D6] shadow-lg"
         onClick={() => {
           addToCart(id, qty, cartContent, setCartContent);
-          setButtonText("Adding...");
+          setButtonText("Success!");
           setTimeout(() => {
             setButtonText("Add to Cart");
           }, 750);
