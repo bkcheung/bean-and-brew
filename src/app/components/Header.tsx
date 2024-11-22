@@ -15,10 +15,10 @@ const Header = () => {
         <Link href="/" className="text-3xl md:text-5xl mr-auto pl-8 md:pl-16">
           Bean & Brew
         </Link>
-        <Link href="/shop" className="text-2xl md:text-3xl ml-2 md:ml-8">
+        <Link href="/shop" aria-label="shop" className="text-2xl md:text-3xl ml-2 md:ml-8">
           Shop
         </Link>
-        <Link href="/cart" className="relative flex items-center mx-6 md:mx-8">
+        <Link href="/cart" aria-label="cart" className="relative flex items-center mx-6 md:mx-8">
           <Image
             className="w-8 invert"
             src="/images/bag.png"

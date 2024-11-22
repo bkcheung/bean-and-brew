@@ -8,9 +8,9 @@ describe("Header", () => {
     const header = screen.getByLabelText("header");
     expect(header).toBeInTheDocument;
   }),
-    it("menu button renders", () => {
+    it("shop button renders", () => {
       render(<Header />);
-      const menuButton = screen.getByRole("button", { name: "menu logo" });
+      const menuButton = screen.getByRole("link", { name: "shop" });
       expect(menuButton).toBeInTheDocument;
     }),
     it("home link renders", () => {
@@ -20,7 +20,7 @@ describe("Header", () => {
     });
   it("cart link renders", () => {
     render(<Header />);
-    const cart = screen.getByRole("link", { name: "Cart" });
+    const cart = screen.getByRole("link", { name: "cart" });
     expect(cart).toBeInTheDocument;
   });
 });

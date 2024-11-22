@@ -18,7 +18,7 @@ const coffee = {
 };
 describe("Product", () => {
   it("renders", () => {
-    const product = render(<Product coffee={coffee} />);
+    const product = render(<Product coffee={coffee} bubble={false} />);
     expect(product).toMatchSnapshot;
   });
 });
