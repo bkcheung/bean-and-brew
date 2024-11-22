@@ -6,6 +6,7 @@ import {
   MouseParallaxChild,
 } from "react-parallax-mouse";
 import { useState, useEffect } from "react";
+import cx from "classnames";
 
 interface productProps {
   beans: coffeeType[];
@@ -26,7 +27,7 @@ const ProductParallax = ({ beans }: productProps) => {
     });
   } else {
     //Parallax for wider screens
-    products = beans.slice(0, 6).map((bean: coffeeType) => {
+    products = beans.slice(0, 6).map((bean: coffeeType, index) => {
       const x = Math.random() * (0.8 - 0.4) + 0.4;
       const y = Math.random() * (0.8 - 0.4) + 0.4;
       return (
@@ -34,7 +35,7 @@ const ProductParallax = ({ beans }: productProps) => {
           key={bean.id}
           factorX={x}
           factorY={y}
-          className="w-auto"
+          className={cx("w-auto", index===2 && "pr-[12vw]", index===3 && "pl-[12vw]")}
         >
           <Product key={bean.id} coffee={bean} bubble={true} />
         </MouseParallaxChild>

@@ -19,7 +19,7 @@ export default async function Home() {
       >
         Shop All
       </Link>
-      <div className="h-[88vh] md:h-[30vh] w-[100vw]" />
+      <div className="h-[88vh] md:h-[5vh] w-[100vw]" />
       <ProductParallax beans={beans} />
     </main>
   );
