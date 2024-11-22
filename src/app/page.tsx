@@ -6,10 +6,10 @@ export default async function Home() {
   const beans = await getBeans();
   return (
     <main
-      className="bg-[url('/images/cup.jpg')] bg-cover bg-center before:bg-fixed bg-fixed
+      className="bg-[url('/images/cup.jpg')] bg-[length:auto_100vh] bg-[center_top_-5em] bg-no-repeat md:bg-cover md:bg-center md:bg-fixed
                  min-h-[100vh] w-[100vw] flex flex-col items-center"
     >
-      <h4 className="absolute md:fixed w-full text-[2em] md:text-[2.5em] text-center pt-[3em] ">
+      <h4 className="absolute md:fixed w-full text-[2em] md:text-[2.5em] text-center pt-[1.5em] ">
         did someone say
       </h4>
       <Link
@@ -19,7 +19,7 @@ export default async function Home() {
       >
         Shop All
       </Link>
-      <div className="h-[100vh] md:h-[30vh] w-[100vw]" />
+      <div className="h-[88vh] md:h-[30vh] w-[100vw]" />
       <ProductParallax beans={beans} />
     </main>
   );
