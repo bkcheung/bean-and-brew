@@ -5,7 +5,7 @@ import { coffeeType } from "../utils/getBeans";
 
 interface productProps {
   coffee: coffeeType;
-  bubble:boolean
+  bubble: boolean;
 }
 const Product = ({ coffee, bubble }: productProps) => {
   return (
@@ -24,7 +24,7 @@ const Product = ({ coffee, bubble }: productProps) => {
           priority
         />
       </Link>
-      {bubble &&
+      {bubble && (
         <div className="absolute w-[38vw] h-[38vw] -z-10">
           <Image
             fill
@@ -35,8 +35,8 @@ const Product = ({ coffee, bubble }: productProps) => {
             priority
           />
         </div>
-      }
-      {!bubble &&
+      )}
+      {!bubble && (
         <>
           <h2 className="group-hover:text-[#888781] group-hover:underline">
             {coffee.name}
@@ -44,7 +44,7 @@ const Product = ({ coffee, bubble }: productProps) => {
           <h1>${coffee.price}</h1>
           <AddToCart id={coffee.id} style="items-center" />
         </>
-      }
+      )}
     </div>
   );
 };

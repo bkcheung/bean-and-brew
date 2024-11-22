@@ -7,7 +7,8 @@ export default async function Home() {
   return (
     <main
       className="bg-[url('/images/cup.jpg')] bg-cover bg-center bg-fixed
-                 min-h-[100vh] w-[100vw] flex flex-col items-center">
+                 min-h-[100vh] w-[100vw] flex flex-col items-center"
+    >
       <h4 className="absolute md:fixed w-full text-[2em] md:text-[2.5em] text-center pt-[3em] ">
         did someone say
       </h4>
@@ -19,7 +20,7 @@ export default async function Home() {
         Shop All
       </Link>
       <div className="h-[100vh] md:h-[30vh] w-[100vw]" />
-      <ProductParallax beans={beans}/>
+      <ProductParallax beans={beans} />
     </main>
   );
 }

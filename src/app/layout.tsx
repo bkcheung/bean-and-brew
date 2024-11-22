@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="font-serif antialiased">
         <CartProvider beans={getBeans()}>
           <Header />
-            {children}
+          {children}
         </CartProvider>
       </body>
     </html>

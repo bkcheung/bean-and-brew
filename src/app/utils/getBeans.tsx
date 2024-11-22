@@ -4,8 +4,8 @@ export async function getBeans(): Promise<coffeeType[]> {
     throw new Error("Error, check request");
   }
   const beans = await data.json();
-  return beans.filter(
-    (bean: coffeeType) => [1,2,4,6,8,12,15,19].includes(bean.id)
+  return beans.filter((bean: coffeeType) =>
+    [1, 2, 4, 6, 8, 12, 15, 19].includes(bean.id),
   );
 }
 
