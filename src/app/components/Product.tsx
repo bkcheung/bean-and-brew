@@ -13,7 +13,7 @@ const Product = ({ coffee, bubble }: productProps) => {
       <Link
         href={`/shop/${coffee.id}`}
         title={`${coffee.name}`}
-        className="relative w-[50vw] h-[45vh] md:w-[30vw] md:h-[42vh] z-10"
+        className="relative w-[30vw] h-[35vw] group-hover:scale-110 transition-transform"
       >
         <Image
           fill
@@ -25,13 +25,13 @@ const Product = ({ coffee, bubble }: productProps) => {
         />
       </Link>
       {bubble &&
-        <div className="absolute w-[42vh] h-[42vh]">
+        <div className="absolute w-[38vw] h-[38vw] -z-10">
           <Image
             fill
             src="/images/bubble.png"
             alt="bubble"
             sizes="32vh"
-            className="opacity-35 -z-10 object-contain drop-shadow-md"
+            className="opacity-20 object-contain drop-shadow-md"
             priority
           />
         </div>
