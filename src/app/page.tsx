@@ -6,7 +6,7 @@ export default async function Home() {
   const beans = await getBeans();
   return (
     <main
-      className="bg-[url('/images/cup.jpg')] bg-cover bg-center bg-fixed
+      className="bg-[url('/images/cup.jpg')] bg-cover bg-center before:bg-fixed bg-fixed
                  min-h-[100vh] w-[100vw] flex flex-col items-center"
     >
       <h4 className="absolute md:fixed w-full text-[2em] md:text-[2.5em] text-center pt-[3em] ">
