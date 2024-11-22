@@ -7,13 +7,13 @@ interface productProps {
   coffee: coffeeType;
   bubble: boolean;
 }
-const Product = ({ coffee, bubble }: productProps) => {
+const Product = ({ coffee, bubble = true }: productProps) => {
   return (
     <div key={coffee.id} className="flex group flex-col items-center">
       <Link
         href={`/shop/${coffee.id}`}
         title={`${coffee.name}`}
-        className="relative w-[30vw] h-[35vw] group-hover:scale-110 transition-transform"
+        className="relative w-[30vw] h-[35vw] max-w-[700px] max-h-[700px] group-hover:scale-110 transition-transform"
       >
         <Image
           fill
@@ -25,7 +25,7 @@ const Product = ({ coffee, bubble }: productProps) => {
         />
       </Link>
       {bubble && (
-        <div className="absolute w-[38vw] h-[38vw] -z-10">
+        <div className="absolute w-[38vw] h-[38vw] max-w-[700px] max-h-[700px] -z-10">
           <Image
             fill
             src="/images/bubble.png"

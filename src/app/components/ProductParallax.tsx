@@ -45,7 +45,7 @@ const ProductParallax = ({ beans }: productProps) => {
     <MouseParallaxContainer
       globalFactorX={0.1}
       globalFactorY={0.1}
-      className="grid grid-cols-2 w-full bg-[#e6e3e3]/95 from-90% via-[#e6e3e3]/80
+      className="grid grid-cols-2 w-full bg-white
                  md:bg-transparent md:gap-x-[30vw] md:gap-y-[5vw] pb-16"
     >
       {products}
