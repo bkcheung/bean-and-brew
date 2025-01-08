@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import { CartProvider } from "./context";
 import { getBeans } from "./utils/getBeans";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Bean and Brew",
@@ -19,6 +20,13 @@ export default function RootLayout({
       <body className="font-serif antialiased">
         <CartProvider beans={getBeans()}>
           <Header />
+          <ToastContainer
+            autoClose={2000}
+            hideProgressBar={true}
+            position="bottom-right"
+            limit={2}
+            pauseOnHover
+          />
           {children}
         </CartProvider>
       </body>
