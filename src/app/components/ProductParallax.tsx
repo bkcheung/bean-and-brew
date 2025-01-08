@@ -35,7 +35,11 @@ const ProductParallax = ({ beans }: productProps) => {
           key={bean.id}
           factorX={x}
           factorY={y}
-          className={cx("w-auto", index===2 && "pr-[12vw]", index===3 && "pl-[12vw]")}
+          className={cx(
+            "w-auto",
+            index === 2 && "pr-[12vw]",
+            index === 3 && "pl-[12vw]",
+          )}
         >
           <Product key={bean.id} coffee={bean} bubble={true} />
         </MouseParallaxChild>
