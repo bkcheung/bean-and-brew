@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'dark-green': '#59935F',
-        'light-green':'#A0BFA3',
-        'light-grey':'#EFF3EC'
-      }
+        "dark-green": "#59935F",
+        "light-green": "#A0BFA3",
+        "light-grey": "#EFF3EC",
+      },
     },
   },
   plugins: [],

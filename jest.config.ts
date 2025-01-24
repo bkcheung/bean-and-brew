@@ -2,14 +2,14 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-import nextJest from 'next/jest.js'
- 
+import nextJest from "next/jest.js";
+
 const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-  dir: './',
-})
+  dir: "./",
+});
 
-import type {Config} from 'jest';
+import type { Config } from "jest";
 
 const config: Config = {
   // Automatically clear mock calls, instances, contexts and results before every test
@@ -24,4 +24,4 @@ const config: Config = {
   testEnvironment: "jsdom",
 };
 
-export default createJestConfig(config)
+export default createJestConfig(config);
