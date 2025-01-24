@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import ProductParallax from "./ProductParallax";
+import { coffeeType } from "../utils/getBeans";
 
-export default function Hero({ beans }: { beans: any }) {
+export default function Hero({ beans }: { beans: coffeeType[] }) {
   const [showText, setShowText] = useState(true);
   const [expandWidth, setExpandWidth] = useState(false);
 
